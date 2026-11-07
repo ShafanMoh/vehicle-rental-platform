@@ -1,0 +1,3 @@
+VERIFIED|RV001|V001|U002|Nimal Perera|5|Very clean car and smooth pickup. Will rent again!|2026-10-01|R001
+VERIFIED|RV002|V002|U003|Kasuni Fernando|4|Great on fuel. A little small for four adults with luggage.|2026-09-02|R004
+GENERAL|RV003|V001|U004|Tharindu Silva|4|Friendly staff at the Colombo branch, car looked well maintained.|2026-10-17

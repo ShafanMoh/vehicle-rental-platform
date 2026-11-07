@@ -1,0 +1,5 @@
+ADMIN|U001|admin|z28HOsT/r0g3vnSZs2H3cg==:FXoyOvCSXjdWlTMIFXKwaiioCIf8gglQl51wspbF4sg=|System Administrator|admin@driveeasy.lk|0112345678|2026-03-06|Fleet Manager
+CUSTOMER|U002|nimal|op/96xjLcQnIusigzdnKSQ==:7aCVbxow76AfsYjzz7CI+meCAHJP9+GFcsAWjv4vJG4=|Nimal Perera|nimal@gmail.com|0771234567|2026-06-06|B1234567|12 Galle Road, Colombo 03
+PREMIUM|U003|kasuni|Ap8t13v6wSxr3RFjRhkIfA==:h+/fDYu9FvrHWyaOX3X2OEqQvDEqZdZ0xzeQvpVHXfo=|Kasuni Fernando|kasuni@gmail.com|0719876543|2026-04-06|B7654321|45 Kandy Road, Kadawatha|120
+CUSTOMER|U004|tharindu|C+5j2esZ4XMer3LPT7fvLg==:/8esccLcISYTzrj0N3BTJZvnaOq4VGGaNONu11tbGVk=|Tharindu Silva|tharindu@yahoo.com|0765554433|2026-09-06|B5558888|8 Lake Drive, Kandy
+ADMIN|U005|staff|5nK5nDxfsqtM85VS5MmO6Q==:ytlohB0yBR2lrWu6ccRt6Sk5w/ySsFkTEzu7IyARlvg=|Ishara Jayasinghe|ishara@driveeasy.lk|0112345679|2026-07-06|Front Desk Officer

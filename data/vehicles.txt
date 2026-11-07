@@ -1,0 +1,10 @@
+CAR|V001|Toyota|Axio|2019|CAB-4521|9500.0|5|Petrol|AVAILABLE||Comfortable and fuel efficient sedan, ideal for city trips and family travel.|Colombo|Automatic
+CAR|V002|Suzuki|Wagon R|2021|CBH-1123|6500.0|4|Hybrid|AVAILABLE||Compact hybrid hatchback that is easy to park and very economical.|Kandy|Automatic
+CAR|V003|Honda|Civic|2022|CBK-7788|13500.0|5|Petrol|AVAILABLE||Sporty sedan with a modern interior, Apple CarPlay and reverse camera.|Colombo|Automatic
+SUV|V004|Toyota|Land Cruiser Prado|2020|CAR-9090|32000.0|7|Diesel|RENTED||Powerful 4x4 for hill country and long family tours.|Colombo|Automatic|true
+SUV|V005|Mitsubishi|Outlander|2021|CBA-3344|18500.0|7|Petrol|AVAILABLE||Spacious seven seater SUV with plenty of luggage space.|Galle|Automatic|false
+VAN|V006|Toyota|KDH HiAce|2018|PH-5566|16000.0|14|Diesel|AVAILABLE||High roof van with A/C, perfect for group tours and airport transfers.|Colombo|1200
+VAN|V007|Nissan|Caravan|2019|PG-2211|14000.0|10|Diesel|MAINTENANCE||Reliable van for small groups and moving goods.|Negombo|1000
+MOTORBIKE|V008|Honda|Dio|2022|BKA-1212|1800.0|2|Petrol|AVAILABLE||Light scooter for getting around town. Great for tourists.|Ella|110|true
+MOTORBIKE|V009|Bajaj|Pulsar 150|2021|BIF-3434|2500.0|2|Petrol|AVAILABLE||Sporty commuter bike with good mileage.|Kandy|150|true
+CAR|V010|Toyota|Prius|2020|CAW-6767|12000.0|5|Hybrid|AVAILABLE||Quiet, efficient hybrid for long drives down the southern coast.|Galle|Automatic
