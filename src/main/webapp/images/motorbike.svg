@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Motorbike">
+  <ellipse cx="200" cy="204" rx="150" ry="10" fill="#0f1e3d" opacity=".15"/>
+  <circle cx="110" cy="164" r="38" fill="none" stroke="#1d2433" stroke-width="14"/>
+  <circle cx="110" cy="164" r="8" fill="#c7cede"/>
+  <circle cx="294" cy="164" r="38" fill="none" stroke="#1d2433" stroke-width="14"/>
+  <circle cx="294" cy="164" r="8" fill="#c7cede"/>
+  <path d="M110 164 L170 116 L238 116 L294 164" fill="none" stroke="#6b7489" stroke-width="8" stroke-linecap="round"/>
+  <path d="M150 112 Q160 90 196 90 L238 90 Q258 90 262 110 L262 128 L150 128 Z" fill="#e11d48"/>
+  <path d="M120 104 Q130 92 154 94 L190 96 L186 108 L126 112 Z" fill="#1d2433"/>
+  <path d="M258 110 L282 74" stroke="#1d2433" stroke-width="8" stroke-linecap="round"/>
+  <path d="M272 70 L298 66" stroke="#1d2433" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="290" cy="92" r="9" fill="#ffd166"/>
+  <path d="M282 110 L294 164" stroke="#6b7489" stroke-width="7" stroke-linecap="round"/>
+  <rect x="176" y="128" width="40" height="22" rx="5" fill="#9aa3b8"/>
+</svg>

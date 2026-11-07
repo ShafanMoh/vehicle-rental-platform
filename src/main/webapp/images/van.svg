@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Van">
+  <ellipse cx="205" cy="202" rx="170" ry="11" fill="#0f1e3d" opacity=".15"/>
+  <path d="M40 170 L40 66 Q40 52 54 52 L276 52 Q292 52 302 64 L346 112 L356 116 Q366 122 366 136 L366 170 Q366 180 356 180 L50 180 Q40 180 40 170 Z" fill="#f5a524"/>
+  <path d="M40 152 L366 152 L366 170 Q366 178 356 178 L50 178 Q40 178 40 170 Z" fill="#d98a0b"/>
+  <rect x="56" y="66" width="56" height="40" rx="6" fill="#fff4dc"/>
+  <rect x="122" y="66" width="56" height="40" rx="6" fill="#fff4dc"/>
+  <rect x="188" y="66" width="56" height="40" rx="6" fill="#fff4dc"/>
+  <path d="M254 66 L280 66 Q288 66 294 72 L330 110 L254 110 Z" fill="#fff4dc"/>
+  <rect x="248" y="60" width="4" height="90" fill="#d98a0b"/>
+  <rect x="220" y="118" width="22" height="5" rx="2.5" fill="#fff4dc"/>
+  <path d="M350 124 L366 128 L366 140 L348 138 Z" fill="#ffffff"/>
+  <path d="M40 120 L52 120 L52 138 L40 138 Z" fill="#ef4444"/>
+  <circle cx="108" cy="178" r="28" fill="#1d2433"/>
+  <circle cx="108" cy="178" r="12" fill="#c7cede"/>
+  <circle cx="304" cy="178" r="28" fill="#1d2433"/>
+  <circle cx="304" cy="178" r="12" fill="#c7cede"/>
+</svg>

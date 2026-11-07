@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Car">
+  <ellipse cx="205" cy="200" rx="165" ry="11" fill="#0f1e3d" opacity=".15"/>
+  <path d="M48 168 L56 138 Q61 124 80 121 L132 115 L168 86 Q180 77 198 77 L262 77 Q282 77 296 90 L326 117 L344 121 Q362 126 364 146 L366 168 Q366 178 356 178 L58 178 Q48 178 48 168 Z" fill="#1f4fd8"/>
+  <path d="M60 150 L362 150 L364 168 Q364 176 356 176 L58 176 Q50 176 50 168 Z" fill="#173fb0"/>
+  <path d="M148 115 L176 92 Q184 86 196 86 L228 86 L228 115 Z" fill="#dbe6ff"/>
+  <path d="M238 86 L262 86 Q278 86 288 96 L308 115 L238 115 Z" fill="#dbe6ff"/>
+  <rect x="232" y="86" width="5" height="62" fill="#173fb0"/>
+  <rect x="200" y="126" width="22" height="5" rx="2.5" fill="#dbe6ff"/>
+  <rect x="268" y="126" width="22" height="5" rx="2.5" fill="#dbe6ff"/>
+  <path d="M346 128 L362 132 L362 142 L344 140 Z" fill="#ffd166"/>
+  <path d="M50 140 L62 136 L62 148 L50 150 Z" fill="#ef4444"/>
+  <circle cx="118" cy="176" r="28" fill="#1d2433"/>
+  <circle cx="118" cy="176" r="12" fill="#c7cede"/>
+  <circle cx="302" cy="176" r="28" fill="#1d2433"/>
+  <circle cx="302" cy="176" r="12" fill="#c7cede"/>
+</svg>

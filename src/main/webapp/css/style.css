@@ -1,0 +1,539 @@
+/* DriveEasy - main stylesheet (works on top of Bootstrap 5) */
+
+:root {
+    --de-navy: #0f1e3d;
+    --de-navy-2: #18305f;
+    --de-accent: #f5a524;
+    --de-accent-dark: #d98a0b;
+    --de-bg: #f4f6fb;
+    --de-card: #ffffff;
+    --de-border: #e4e8f1;
+    --de-text: #1d2433;
+    --de-muted: #6b7489;
+    --de-radius: 14px;
+    --bs-primary: #1f4fd8;
+    --bs-primary-rgb: 31, 79, 216;
+    --bs-link-color: #1f4fd8;
+    --bs-link-color-rgb: 31, 79, 216;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--de-bg);
+    color: var(--de-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    --bs-btn-bg: #1f4fd8;
+    --bs-btn-border-color: #1f4fd8;
+    --bs-btn-hover-bg: #173fb0;
+    --bs-btn-hover-border-color: #173fb0;
+}
+
+.btn-accent {
+    background: var(--de-accent);
+    border-color: var(--de-accent);
+    color: #1b1300;
+}
+
+.btn-accent:hover {
+    background: var(--de-accent-dark);
+    border-color: var(--de-accent-dark);
+    color: #1b1300;
+}
+
+.form-control, .form-select {
+    border-radius: 10px;
+    border-color: var(--de-border);
+    padding: .6rem .85rem;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+/* ---------- Navbar ---------- */
+.navbar-de {
+    background: var(--de-navy);
+    padding: .8rem 0;
+}
+
+.navbar-de .navbar-brand {
+    font-weight: 800;
+    font-size: 1.35rem;
+    color: #fff;
+}
+
+.navbar-de .navbar-brand span {
+    color: var(--de-accent);
+}
+
+.navbar-de .nav-link {
+    color: rgba(255, 255, 255, .78);
+    font-weight: 500;
+    margin: 0 .2rem;
+}
+
+.navbar-de .nav-link:hover,
+.navbar-de .nav-link.active {
+    color: #fff;
+}
+
+.avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--de-accent);
+    color: #1b1300;
+    font-weight: 700;
+    font-size: .8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-lg {
+    width: 72px;
+    height: 72px;
+    font-size: 1.5rem;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    background: radial-gradient(circle at 80% 20%, #2a4c96 0%, var(--de-navy) 55%);
+    color: #fff;
+    padding: 5rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.hero h1 .highlight {
+    color: var(--de-accent);
+}
+
+.hero p.lead {
+    color: rgba(255, 255, 255, .78);
+}
+
+.hero-img {
+    max-width: 100%;
+    filter: drop-shadow(0 25px 35px rgba(0, 0, 0, .35));
+}
+
+.search-panel {
+    background: #fff;
+    border-radius: var(--de-radius);
+    padding: 1.25rem;
+    box-shadow: 0 20px 45px rgba(15, 30, 61, .18);
+    margin-top: -3.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-strip .stat {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--de-accent);
+}
+
+/* ---------- Cards ---------- */
+.card-de {
+    background: var(--de-card);
+    border: 1px solid var(--de-border);
+    border-radius: var(--de-radius);
+    box-shadow: 0 4px 18px rgba(15, 30, 61, .04);
+}
+
+.vehicle-card {
+    transition: transform .18s ease, box-shadow .18s ease;
+    overflow: hidden;
+    height: 100%;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(15, 30, 61, .12);
+}
+
+.vehicle-img {
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #eef2fb 0%, #dde5f6 100%);
+    position: relative;
+}
+
+.vehicle-img img {
+    max-height: 165px;
+    max-width: 92%;
+    object-fit: contain;
+}
+
+.vehicle-img.large {
+    height: 340px;
+    border-radius: var(--de-radius);
+}
+
+.vehicle-img.large img {
+    max-height: 300px;
+}
+
+.vehicle-img .badge-type {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.vehicle-img .badge-status {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.price {
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--de-navy);
+}
+
+.price small {
+    font-weight: 500;
+    font-size: .8rem;
+    color: var(--de-muted);
+}
+
+.spec-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .9rem;
+    font-size: .85rem;
+    color: var(--de-muted);
+}
+
+.spec-list i {
+    color: var(--bs-primary);
+    margin-right: .2rem;
+}
+
+.stars {
+    color: var(--de-accent);
+    letter-spacing: 1px;
+}
+
+.text-muted-de {
+    color: var(--de-muted);
+}
+
+/* ---------- Page header ---------- */
+.page-header {
+    background: var(--de-navy);
+    color: #fff;
+    padding: 2.5rem 0;
+    margin-bottom: 2rem;
+}
+
+.page-header p {
+    color: rgba(255, 255, 255, .7);
+    margin: 0;
+}
+
+/* ---------- Feature boxes ---------- */
+.feature-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    background: rgba(31, 79, 216, .1);
+    color: var(--bs-primary);
+}
+
+/* ---------- Auth pages ---------- */
+.auth-wrap {
+    max-width: 480px;
+    margin: 3rem auto;
+}
+
+.auth-wrap.wide {
+    max-width: 760px;
+}
+
+/* ---------- Booking panel ---------- */
+.booking-panel {
+    position: sticky;
+    top: 1.5rem;
+}
+
+.quote-box {
+    background: var(--de-bg);
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: .92rem;
+}
+
+.quote-box .d-flex {
+    gap: .75rem;
+}
+
+.quote-box .d-flex span:last-child {
+    white-space: nowrap;
+}
+
+.quote-box .total {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+/* ---------- Rating input ---------- */
+.rating-input {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    gap: .2rem;
+}
+
+.rating-input input {
+    display: none;
+}
+
+.rating-input label {
+    font-size: 1.7rem;
+    color: #d3d8e3;
+    cursor: pointer;
+}
+
+.rating-input input:checked ~ label,
+.rating-input label:hover,
+.rating-input label:hover ~ label {
+    color: var(--de-accent);
+}
+
+/* ---------- Payment method cards ---------- */
+.method-option input {
+    display: none;
+}
+
+.method-option label {
+    border: 2px solid var(--de-border);
+    border-radius: 12px;
+    padding: 1rem;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    transition: border-color .15s ease;
+}
+
+.method-option input:checked + label {
+    border-color: var(--bs-primary);
+    background: rgba(31, 79, 216, .05);
+}
+
+/* ---------- Admin ---------- */
+.admin-layout {
+    display: flex;
+    min-height: calc(100vh - 70px);
+}
+
+.admin-sidebar {
+    width: 240px;
+    background: #fff;
+    border-right: 1px solid var(--de-border);
+    padding: 1.5rem 1rem;
+    flex-shrink: 0;
+}
+
+.admin-sidebar .nav-link {
+    color: var(--de-text);
+    border-radius: 10px;
+    padding: .6rem .85rem;
+    font-weight: 500;
+    margin-bottom: .2rem;
+}
+
+.admin-sidebar .nav-link i {
+    width: 22px;
+    display: inline-block;
+}
+
+.admin-sidebar .nav-link:hover {
+    background: var(--de-bg);
+}
+
+.admin-sidebar .nav-link.active {
+    background: var(--de-navy);
+    color: #fff;
+}
+
+.admin-content {
+    flex: 1;
+    padding: 2rem;
+    min-width: 0;
+}
+
+.kpi {
+    padding: 1.25rem;
+}
+
+.kpi .kpi-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.kpi .kpi-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.bar-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    height: 200px;
+    padding-top: 1rem;
+}
+
+.bar-chart .bar-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.bar-chart .bar {
+    width: 100%;
+    max-width: 48px;
+    background: linear-gradient(180deg, #3d6cf0, #1f4fd8);
+    border-radius: 8px 8px 3px 3px;
+    min-height: 3px;
+}
+
+.bar-chart .bar-label {
+    font-size: .75rem;
+    color: var(--de-muted);
+    margin-top: .4rem;
+    white-space: nowrap;
+}
+
+.table-de {
+    margin: 0;
+}
+
+.table-de thead th {
+    background: #f7f9fd;
+    color: var(--de-muted);
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    font-weight: 700;
+    border-bottom: 1px solid var(--de-border);
+}
+
+.table-de td {
+    vertical-align: middle;
+}
+
+.table-de td.text-end {
+    white-space: nowrap;
+}
+
+.thumb {
+    width: 64px;
+    height: 42px;
+    object-fit: contain;
+    background: #eef2fb;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+/* ---------- Footer ---------- */
+.footer-de {
+    background: var(--de-navy);
+    color: rgba(255, 255, 255, .7);
+    padding: 3rem 0 1.5rem;
+    margin-top: 4rem;
+}
+
+.footer-de a {
+    color: rgba(255, 255, 255, .7);
+    text-decoration: none;
+}
+
+.footer-de a:hover {
+    color: #fff;
+}
+
+.footer-de h6 {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* ---------- Receipt ---------- */
+@media print {
+    .navbar, .footer-de, .no-print {
+        display: none !important;
+    }
+
+    body {
+        background: #fff;
+    }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 991px) {
+    .admin-layout {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+        border-right: 0;
+        border-bottom: 1px solid var(--de-border);
+        padding: .75rem;
+    }
+
+    .admin-sidebar .nav {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+    }
+
+    .admin-content {
+        padding: 1.25rem;
+    }
+
+    .booking-panel {
+        position: static;
+    }
+}
