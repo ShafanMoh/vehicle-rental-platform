@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run DriveEasy",
+            "request": "launch",
+            "mainClass": "com.driveeasy.rental.RentalApplication",
+            "projectName": "vehicle-rental-platform",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PORT": "8081"
+            }
+        }
+    ]
+}

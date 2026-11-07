@@ -1,0 +1,261 @@
+@startuml DriveEasy_Class_Diagram
+' SE1020 - Vehicle Rental Service Platform
+' Open with the PlantUML plugin in IntelliJ, or paste into https://www.plantuml.com/plantuml
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+hide empty members
+
+package model {
+  interface Identifiable {
+    +getId() : String
+    +setId(id : String)
+  }
+  interface FileStorable {
+    +toFileString() : String
+  }
+
+  package user {
+    abstract class User {
+      -id : String
+      -username : String
+      -passwordHash : String
+      -fullName : String
+      -email : String
+      -phone : String
+      -registeredDate : LocalDate
+      +{abstract} getRole() : String
+      +{abstract} getRoleDisplayName() : String
+      +{abstract} isAdmin() : boolean
+      +{abstract} getHomePage() : String
+      +authenticate(rawPassword : String) : boolean
+      +changePassword(newPassword : String)
+      +toFileString() : String
+    }
+    class Customer {
+      -drivingLicenseNumber : String
+      -address : String
+      +getDiscountRate() : double
+      +getMaxActiveRentals() : int
+      +isPremium() : boolean
+    }
+    class PremiumCustomer {
+      -loyaltyPoints : int
+      +getDiscountRate() : double
+      +getMaxActiveRentals() : int
+      +earnPointsFor(amount : double)
+    }
+    class Admin {
+      -jobTitle : String
+    }
+  }
+
+  package vehicle {
+    abstract class Vehicle {
+      -id : String
+      -brand : String
+      -model : String
+      -year : int
+      -plateNumber : String
+      -dailyRate : double
+      -seats : int
+      -fuelType : String
+      -status : VehicleStatus
+      -imageUrl : String
+      -description : String
+      -location : String
+      +{abstract} getType() : String
+      +{abstract} getInsuranceFeePerDay() : double
+      +{abstract} getSpecSummary() : String
+      +calculateRentalCost(days : long) : double
+      +isBookable() : boolean
+    }
+    class Car {
+      -transmission : String
+    }
+    class SUV {
+      -fourWheelDrive : boolean
+    }
+    class Van {
+      -cargoCapacityKg : int
+      +calculateRentalCost(days : long) : double
+    }
+    class Motorbike {
+      -engineCc : int
+      -helmetIncluded : boolean
+      +calculateRentalCost(days : long) : double
+    }
+    enum VehicleStatus {
+      AVAILABLE
+      RENTED
+      MAINTENANCE
+    }
+  }
+
+  package rental {
+    class Rental {
+      -id : String
+      -customerId : String
+      -vehicleId : String
+      -startDate : LocalDate
+      -endDate : LocalDate
+      -pickupLocation : String
+      -status : RentalStatus
+      -baseCost : double
+      -discountAmount : double
+      -totalCost : double
+      +getDays() : long
+      +overlaps(start, end) : boolean
+      +isEditable() : boolean
+      +isCancellable() : boolean
+      +confirm()
+      +startTrip()
+      +complete()
+      +cancel()
+    }
+    enum RentalStatus {
+      PENDING_PAYMENT
+      CONFIRMED
+      ONGOING
+      COMPLETED
+      CANCELLED
+    }
+  }
+
+  package payment {
+    abstract class Payment {
+      -id : String
+      -rentalId : String
+      -customerId : String
+      -amount : double
+      -createdAt : LocalDateTime
+      -status : PaymentStatus
+      +{abstract} getMethod() : String
+      +{abstract} getProcessingFee() : double
+      +{abstract} getDetails() : String
+      +{abstract} process()
+      +getTotalCharged() : double
+      +markPaid()
+      +refund()
+    }
+    class CardPayment {
+      -cardHolderName : String
+      -cardLastFour : String
+    }
+    class BankTransferPayment {
+      -bankName : String
+      -referenceNumber : String
+    }
+    class CashPayment
+    enum PaymentStatus {
+      PENDING
+      PAID
+      REFUNDED
+    }
+  }
+
+  package review {
+    abstract class Review {
+      -id : String
+      -vehicleId : String
+      -customerId : String
+      -customerName : String
+      -rating : int
+      -comment : String
+      -createdOn : LocalDate
+      +{abstract} getReviewType() : String
+      +{abstract} getBadgeLabel() : String
+      +{abstract} getRatingWeight() : double
+    }
+    class VerifiedReview {
+      -rentalId : String
+    }
+    class GeneralReview
+  }
+}
+
+package repository {
+  interface "DataRepository<T>" as DataRepository {
+    +save(entity : T) : T
+    +findAll() : List<T>
+    +findById(id : String) : Optional<T>
+    +update(entity : T) : boolean
+    +deleteById(id : String) : boolean
+  }
+  abstract class "FileRepository<T>" as FileRepository {
+    -file : File
+    -idPrefix : String
+    #{abstract} parse(fields : String[]) : T
+    -readAll() : List<T>
+    -writeAll(records : List<T>)
+    -generateNextId(records) : String
+  }
+  class UserRepository
+  class VehicleRepository
+  class RentalRepository
+  class PaymentRepository
+  class ReviewRepository
+}
+
+package service {
+  class UserService
+  class VehicleService
+  class RentalService
+  class PaymentService
+  class ReviewService
+  class DashboardService
+}
+
+' ---------- Inheritance ----------
+User <|-- Customer
+Customer <|-- PremiumCustomer
+User <|-- Admin
+Vehicle <|-- Car
+Car <|-- SUV
+Vehicle <|-- Van
+Vehicle <|-- Motorbike
+Payment <|-- CardPayment
+Payment <|-- BankTransferPayment
+Payment <|-- CashPayment
+Review <|-- VerifiedReview
+Review <|-- GeneralReview
+
+' ---------- Interfaces ----------
+Identifiable <|.. User
+FileStorable <|.. User
+Identifiable <|.. Vehicle
+FileStorable <|.. Vehicle
+Identifiable <|.. Rental
+FileStorable <|.. Rental
+Identifiable <|.. Payment
+FileStorable <|.. Payment
+Identifiable <|.. Review
+FileStorable <|.. Review
+DataRepository <|.. FileRepository
+FileRepository <|-- UserRepository
+FileRepository <|-- VehicleRepository
+FileRepository <|-- RentalRepository
+FileRepository <|-- PaymentRepository
+FileRepository <|-- ReviewRepository
+
+' ---------- Associations ----------
+Vehicle --> VehicleStatus
+Rental --> RentalStatus
+Payment --> PaymentStatus
+Customer "1" -- "0..*" Rental : books >
+Vehicle "1" -- "0..*" Rental : is booked in >
+Rental "1" -- "0..1" Payment : paid by >
+Vehicle "1" -- "0..*" Review : has >
+Customer "1" -- "0..*" Review : writes >
+
+UserService --> UserRepository
+VehicleService --> VehicleRepository
+RentalService --> RentalRepository
+RentalService --> VehicleService
+RentalService --> UserService
+PaymentService --> PaymentRepository
+ReviewService --> ReviewRepository
+ReviewService --> RentalService
+DashboardService --> VehicleService
+DashboardService --> RentalService
+DashboardService --> PaymentService
+@enduml
