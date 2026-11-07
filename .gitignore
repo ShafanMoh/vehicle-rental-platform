@@ -1,0 +1,19 @@
+# Build output
+target/
+*.class
+*.war
+*.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Note: the data/ folder is NOT ignored, so the sample .txt files are part of the repository.
